@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout android:layout_width="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/wagon_number_bg"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/wagonPlaceHolder">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_margin="8dp"
+                  android:layout_centerHorizontal="true"
+                  android:text="@string/wagon"
+                  android:id="@+id/wagonIndicator"
+                  android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_below="@+id/wagonIndicator"
+                  android:layout_height="wrap_content"
+                  android:layout_centerHorizontal="true"
+                  android:id="@+id/wagonNumber"
+                  android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+    </RelativeLayout>
+
+
+
+    <Button android:layout_width="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/previousWagonButton"
+            android:text="@string/previous_wagon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/wagonPlaceHolder"/>
+
+    <Button android:layout_width="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nextWagonButton"
+            android:text="@string/next_wagon"
+            app:layout_constraintLeft_toRightOf="@+id/wagonPlaceHolder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    <FrameLayout
+            android:layout_width="0dp"
+            android:id="@+id/wagonPlaceHolder"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/previousWagonButton"
+            app:layout_constraintRight_toLeftOf="@+id/nextWagonButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    <androidx.recyclerview.widget.RecyclerView
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/wagonPlaceHolder"
+            app:layout_constraintBottom_toTopOf="@+id/previousWagonButton"
+            android:id="@+id/selectedPlacesRecycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
