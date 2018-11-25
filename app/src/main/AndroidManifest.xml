@@ -3,6 +3,7 @@
           package="com.dekodersi.pkpmobile">
 
     <application
+            android:name=".PkpApplication"
             android:allowBackup="true"
             android:windowSoftInputMode="adjustPan|adjustResize"
             android:icon="@mipmap/ic_launcher"
@@ -11,9 +12,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".activities.FindConnections">
+        <activity android:name=".PlacePickerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>

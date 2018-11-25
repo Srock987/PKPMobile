@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:background="@drawable/selected_item"
+              android:orientation="vertical"
+              android:layout_margin="4dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+    <TextView
+            android:layout_margin="4dp"
+            android:textColor="@color/white"
+            android:text="AAAA"
+            android:id="@+id/selectedSeatTextView"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:layout_margin="4dp"
+            android:textColor="@color/white"
+            android:text="BBBB"
+            android:id="@+id/selectedSeatWagon"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

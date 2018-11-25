@@ -3,6 +3,9 @@
     <string name="departure">departure</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
+    <string name="previous_wagon">Previous</string>
+    <string name="next_wagon">Next</string>
+    <string name="wagon">Wagon:</string>
     <string name="search">Search</string>
     <string name="arrival">Arrival</string>
 
