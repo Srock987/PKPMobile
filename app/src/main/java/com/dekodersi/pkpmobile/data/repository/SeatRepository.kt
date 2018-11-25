@@ -8,14 +8,18 @@ import com.dekodersi.pkpmobile.data.ApiService
 class SeatRepository(val apiService: ApiService) {
 
     var incrementor = 1
-    val data = MutableLiveData<List<Seat>>()
+    private var data = MutableLiveData<List<Seat>>()
 
-    fun getSeats(connectionId: Int):MutableLiveData<List<Seat>>{
-        data.value=randomSeatList(connectionId)
+    fun getSeats(): MutableLiveData<List<Seat>>{
         return data
     }
 
+    fun fetchSeats(connectionId: Int){
+        data.value=randomSeatList(connectionId)
+    }
+
     fun randomSeatList(wagonId: Int):List<Seat>{
+        incrementor = 1
         val randomSeats = mutableListOf<Seat>()
         for (i in 1..42){
             randomSeats.add(randomSeat(wagonId))
@@ -24,6 +28,7 @@ class SeatRepository(val apiService: ApiService) {
     }
 
     fun randomSeat(wagonId: Int): Seat {
+        val wagonStart = (wagonId-1)*42
         val randomStateInt = (0..1).random()
         val status : SeatStatus
         when(randomStateInt){
@@ -31,7 +36,7 @@ class SeatRepository(val apiService: ApiService) {
             1 -> status= SeatStatus.free
             else -> status= SeatStatus.selected
         }
-        return Seat(incrementor++, status, wagonId)
+        return Seat(wagonStart+incrementor++, status, wagonId)
     }
 
 }

@@ -64,6 +64,9 @@ class WagonFragment : Fragment(), OnSeatSelected {
         viewModel = activity?.run {
             ViewModelProviders.of(this,viewModelFactory).get(SeatsViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
+        viewModel.getAllSeats().observe(this, Observer {
+            adapter.updateData(it)
+        })
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -81,8 +84,6 @@ class WagonFragment : Fragment(), OnSeatSelected {
     }
 
     private fun showSeats(wagonId: Int){
-        viewModel.getAllSeats(3).observe(this, Observer {
-            adapter.updateData(it)
-        })
+        viewModel.fetchSeats(wagonId)
     }
 }

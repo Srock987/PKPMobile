@@ -9,7 +9,7 @@ import com.dekodersi.pkpmobile.data.repository.SeatRepository
 class SeatsViewModel(val repository: SeatRepository) : ViewModel() {
 
     private lateinit var seatsList: List<Seat>
-    private lateinit var seatsLivaData: MutableLiveData<List<Seat>>
+    private var seatsLivaData = MutableLiveData<List<Seat>>()
 
     private lateinit var selectedSeats: List<Seat>
     private lateinit var selectedSeatsData: MutableLiveData<List<Seat>>
@@ -27,14 +27,15 @@ class SeatsViewModel(val repository: SeatRepository) : ViewModel() {
         currentWagon = 1
     }
 
-    fun getAllSeats(connectionId: Int):LiveData<List<Seat>>{
-        if (!::seatsLivaData.isInitialized){
-            seatsLivaData = repository.getSeats(connectionId)
-            if (seatsLivaData.value!=null){
-                seatsList = seatsLivaData.value!!
-            }
-        }
-        return seatsLivaData
+    fun fetchSeats(connectionId: Int){
+        repository.fetchSeats(connectionId)
+    }
+
+    fun getAllSeats(): MutableLiveData<List<Seat>>{
+        val liveData = repository.getSeats()
+        liveData.
+//        seatsList = seatsLivaData.value!!
+       return
     }
 
     fun getWagon():MutableLiveData<Int>{
