@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content">
+    <ImageView android:layout_width="50dp" android:layout_height="50dp"
+               android:src="@drawable/train"
+               android:id="@+id/trainLogo"
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_marginTop="4dp" app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toStartOf="@+id/numberOfTrain" android:layout_marginEnd="10dp"
+               android:layout_marginStart="8dp"/>
+    <TextView
+            android:gravity="center"
+            android:text="Train number:\n 1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/trainLogo"
+            app:layout_constraintEnd_toStartOf="@id/departureTime"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textSize="16dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/numberOfTrain"/>
+
+    <TextView
+            android:gravity="center"
+            android:text="departure:\n 19:20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/numberOfTrain"
+            app:layout_constraintEnd_toStartOf="@id/arrivalTime"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textSize="16dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/departureTime"/>
+
+    <TextView
+            android:gravity="center"
+            android:text="Arrival:\n22:20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/departureTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textSize="16dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/arrivalTime"/>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/trainLogo"
+
+            android:layout_marginTop="4dp"
+            android:id="@+id/view"/>
+
+</android.support.constraint.ConstraintLayout>
