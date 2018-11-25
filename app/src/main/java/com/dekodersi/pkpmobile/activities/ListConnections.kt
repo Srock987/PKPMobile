@@ -1,5 +1,6 @@
 package com.dekodersi.pkpmobile.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -11,14 +12,27 @@ import com.dekodersi.pkpmobile.adapters.ConnectionAdater
 import com.dekodersi.pkpmobile.data.Connection
 import kotlinx.android.synthetic.main.activity_list_connections.*
 
-class ListConnections : AppCompatActivity() {
+class ListConnections : AppCompatActivity(), ConnectionAdater.ConnectionListener {
+
+    companion object {
+        const val DESIRED_CONNECTION = "DESIRED_CONNECTION"
+        const val CONNECTION_BUNDLE = "CONNECTION_BUNDLE"
+    }
+
+    override fun onConnectionClicked(connection: Connection) {
+       val intent = Intent(this,PlacePickerActivity::class.java)
+        val bundle = Bundle()
+        bundle.putParcelable(DESIRED_CONNECTION,connection)
+        intent.putExtra(CONNECTION_BUNDLE,bundle)
+        startActivity(intent)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_connections)
 
-        departureCity.text = getIntent().getExtras().getString("departureCity")
-        arrivalCity.text = getIntent().getExtras().getString("arrivalCity")
+        departureCity.text = getIntent().getExtras()?.getString("departureCity")
+        arrivalCity.text = getIntent().getExtras()?.getString("arrivalCity")
 
 
         val arrayConnection: Array<Connection> = filledList()
@@ -29,7 +43,7 @@ class ListConnections : AppCompatActivity() {
             RecyclerView.VERTICAL,
             false
         )
-        connectionRecyclerView.adapter = ConnectionAdater(arrayConnection,context = this@ListConnections)
+        connectionRecyclerView.adapter = ConnectionAdater(arrayConnection,this)
 
     }
 

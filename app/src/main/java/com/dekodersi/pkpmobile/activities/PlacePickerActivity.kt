@@ -1,5 +1,6 @@
 package com.dekodersi.pkpmobile.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,10 @@ class PlacePickerActivity : AppCompatActivity() {
 
     private lateinit var selectedSeatsAdapter: SelectedAdapter
 
+    companion object {
+        const val PLACES_BUNDLE = "PLACES_BUNDLE"
+    }
+
     @Inject
     lateinit var viewModelFactory: SeatViewModelFactory
 
@@ -34,6 +39,12 @@ class PlacePickerActivity : AppCompatActivity() {
         }
         previousWagonButton.setOnClickListener{
             viewModel.previousWagon()
+        }
+        buyButton.setOnClickListener{
+            val intent = Intent(this,FakeBlickActivity::class.java)
+            val bundle = Bundle()
+            intent.putExtra(PLACES_BUNDLE,bundle)
+            startActivity(intent)
         }
     }
 

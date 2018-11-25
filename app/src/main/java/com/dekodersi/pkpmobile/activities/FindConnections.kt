@@ -6,9 +6,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.dekodersi.pkpmobile.R
 import kotlinx.android.synthetic.main.activity_find_connections.*
-import org.jetbrains.anko.toast
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -72,16 +72,16 @@ class FindConnections : AppCompatActivity() {
         searchButton.setOnClickListener{
             println(arrivalInput.text.toString())
             if(arrivalInput == departureInput){
-            toast("Arrival and Departure are the same!")
+                Toast.makeText(this,"Arrival and Departure are the same!",Toast.LENGTH_SHORT).show()
             }
             if(arrivalInput == null || departureInput == null){
-                toast("Arrival or Departure is null")
+                Toast.makeText(this,"Arrival or Departure is null",Toast.LENGTH_SHORT).show()
             }
             if(!stations.contains(arrivalInput.text.toString()) || !stations.contains(departureInput.text.toString())) {
-                toast("Arrival or Departure not in stations list")
+                Toast.makeText(this,"Arrival or Departure not in stations list",Toast.LENGTH_SHORT).show()
             }
             else{
-                toast("Dziala Elo")
+                Toast.makeText(this,"Dziala Elo",Toast.LENGTH_SHORT).show()
                 onSuccessfulPick()
             }
 

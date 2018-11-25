@@ -30,23 +30,35 @@
 
 
 
-    <Button android:layout_width="wrap_content"
+    <Button style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
             android:layout_margin="4dp"
             android:layout_height="wrap_content"
             android:id="@+id/previousWagonButton"
             android:text="@string/previous_wagon"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/wagonPlaceHolder"/>
+            app:layout_constraintRight_toLeftOf="@+id/buyButton"/>
 
-    <Button android:layout_width="wrap_content"
+    <Button style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
             android:layout_margin="4dp"
             android:layout_height="wrap_content"
             android:id="@+id/nextWagonButton"
             android:text="@string/next_wagon"
-            app:layout_constraintLeft_toRightOf="@+id/wagonPlaceHolder"
+            app:layout_constraintLeft_toRightOf="@+id/buyButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buyButton"
+            android:text="@string/confirm"
+            app:layout_constraintLeft_toRightOf="@+id/previousWagonButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/nextWagonButton"/>
 
     <FrameLayout
             android:layout_width="0dp"
@@ -55,7 +67,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/previousWagonButton"
             app:layout_constraintRight_toLeftOf="@+id/nextWagonButton"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/buyButton"
             />
 
     <androidx.recyclerview.widget.RecyclerView

@@ -8,5 +8,8 @@
     <string name="departure">departure</string>
     <string name="time">time</string>
     <string name="date">date</string>
+    <string name="blick_code">Blick code:</string>
+    <string name="confirm">Pay</string>
+    <string name="payment_has_been_succesfully_processed">Payment has been succesfully processed.</string>
 
 </resources>
