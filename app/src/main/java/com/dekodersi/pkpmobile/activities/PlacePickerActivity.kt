@@ -1,4 +1,4 @@
-package com.dekodersi.pkpmobile
+package com.dekodersi.pkpmobile.activities
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.dekodersi.pkpmobile.R
 import com.dekodersi.pkpmobile.adapters.SelectedAdapter
 import com.dekodersi.pkpmobile.fragments.WagonFragment
 import com.dekodersi.pkpmobile.viewmodels.SeatViewModelFactory

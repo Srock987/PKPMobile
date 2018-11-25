@@ -5,5 +5,8 @@
     <string name="wagon">Wagon:</string>
     <string name="search">Search</string>
     <string name="arrival">Arrival</string>
+    <string name="departure">departure</string>
+    <string name="time">time</string>
+    <string name="date">date</string>
 
 </resources>

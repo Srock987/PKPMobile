@@ -1,6 +1,6 @@
 package com.dekodersi.pkpmobile.data
 
-import com.dekodersi.pkpmobile.PlacePickerActivity
+import com.dekodersi.pkpmobile.activities.PlacePickerActivity
 import com.dekodersi.pkpmobile.fragments.WagonFragment
 import dagger.Component
 import javax.inject.Singleton

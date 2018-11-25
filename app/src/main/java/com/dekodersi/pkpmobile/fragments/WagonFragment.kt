@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragmen_wagon.*
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dekodersi.pkpmobile.*
+import com.dekodersi.pkpmobile.activities.PkpApplication
 import com.dekodersi.pkpmobile.adapters.OnSeatSelected
 import com.dekodersi.pkpmobile.adapters.SeatsAdapter
 import com.dekodersi.pkpmobile.data.entity.Seat

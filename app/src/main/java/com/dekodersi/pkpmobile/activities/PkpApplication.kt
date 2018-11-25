@@ -1,4 +1,4 @@
-package com.dekodersi.pkpmobile
+package com.dekodersi.pkpmobile.activities
 
 import android.app.Application
 import com.dekodersi.pkpmobile.data.ApiComponent
